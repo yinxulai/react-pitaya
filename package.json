@@ -7,7 +7,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./dist && cp -a ./src ./dist && tsc",
+    "build": "node script/compile.js && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
