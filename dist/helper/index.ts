@@ -1,0 +1,1 @@
+export { default as errorCatcher } from './error-catcher'

@@ -1,0 +1,73 @@
+@import '../../styles/altitude.less';
+@import '../../styles/color.less';
+@import '../../styles/gap.less';
+
+.button {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+
+  transition: .1s;
+  overflow: hidden;
+  border-radius: 4px;
+
+  color: white;
+  background-color: @color-primary;
+
+  // 基础样式
+  .realButton {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: inherit;
+    cursor: inherit;
+    font-size: inherit;
+    text-align: center;
+    font-weight: inherit;
+    display: inline-block;
+    padding: (1em / 2) 2em;
+    background-color: transparent;
+  }
+}
+
+
+.button.link {
+  color: @color-primary;
+  background-color: transparent;
+  box-shadow: none !important;
+}
+
+// 不同的按钮尺寸
+
+.button.small {
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.button.large {
+  font-size: 16px;
+  font-weight:600;
+}
+
+.button.normal {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+// 不同的按钮状态
+
+.button.normal {
+  .altitude(2);
+}
+
+.button.loading {
+  .altitude(0);
+}
+
+.button.disable {
+  .altitude(0);
+}
+
+.button:active {
+  .altitude(0);
+}

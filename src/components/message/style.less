@@ -1,0 +1,44 @@
+@import '../../styles/altitude.less';
+@import '../../styles/color.less';
+@import '../../styles/gap.less';
+
+.message {
+    color: black;
+    min-width: 200px;
+    border-radius: 6px;
+    background-color: white;
+
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    .altitude-box-shadow(4);
+
+    .gap-padding(2);
+    .gap-padding-vertical(4);
+    .gap-margin(2);
+}
+
+.context {
+    color: black;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+.info {
+    color: @normal;
+}
+
+.error {
+    color: @error;
+}
+
+.success {
+    color: @correct;
+}
+
+.warning {
+    color: @warning;
+}

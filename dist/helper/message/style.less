@@ -1,0 +1,51 @@
+.container {
+  top: 0;
+  left: 0;
+  position: fixed;
+  text-align: right;
+  width: 100vw !important;
+
+  .list {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+// appear 指页面第一次加载的开始状态
+// enter 是入场前的状态
+// exit 是离开时的状态
+
+.appear, .enter {
+  opacity: 0;
+  transform: scale(0.8) translateY(-100%);
+}
+
+.appearActive, .enterActive {
+  opacity: 1;
+  transition: .2s;
+  transform: scale(1) translateY(0);
+}
+
+.appearDone, .enterDone {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.exit {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.exitActive {
+  opacity: 0;
+  transition: .2s;
+  transform: scale(0.7) translateY(-100%);
+}
+
+.exitDone {
+  opacity: 0;
+  transform: scale(0.7) translateY(-100%);
+}
