@@ -45,7 +45,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var autobind_decorator_1 = __importDefault(require("autobind-decorator"));
+var autobind_1 = __importDefault(require("../autobind"));
 var Listener = /** @class */ (function () {
     function Listener() {
         this.subscribers = new Map();
@@ -83,13 +83,13 @@ var Listener = /** @class */ (function () {
         });
     };
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], Listener.prototype, "addListener", null);
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], Listener.prototype, "removeListener", null);
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], Listener.prototype, "dispatchSubscribers", null);
     return Listener;
 }());

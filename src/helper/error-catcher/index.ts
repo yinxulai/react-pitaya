@@ -1,4 +1,4 @@
-import autobind from 'autobind-decorator'
+import autobind from '../autobind'
 import { error, success } from '../message'
 
 export type ErrorKey = string | number | symbol //TODO: 支持 正则

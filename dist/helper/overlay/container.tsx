@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './style.less'
-import autobind from 'autobind-decorator'
+import autobind from '../autobind'
 import RootContainer from '../../components/container'
 import defaultController, { remove, Controller, OverlayID, OverlayMap, isOverlayRender } from './controller'
 

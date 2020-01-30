@@ -22,8 +22,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var autobind_1 = __importDefault(require("../autobind"));
 var listener_1 = require("../listener");
-var autobind_decorator_1 = __importDefault(require("autobind-decorator"));
 function isOverlayRender(overlay) {
     var render = overlay.render;
     // 检查 render 类型
@@ -54,10 +54,10 @@ var Controller = /** @class */ (function (_super) {
         }
     };
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], Controller.prototype, "insert", null);
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], Controller.prototype, "remove", null);
     return Controller;
 }(listener_1.Listener));

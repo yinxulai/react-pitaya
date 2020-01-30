@@ -1,7 +1,6 @@
 import React from 'react'
 import lessstyle from './style.less'
-import { CSSProperties, HTMLAttributes } from "react"
-
+import { CSSProperties, HTMLAttributes } from 'react'
 
 export interface IStyleArray extends Array<Style> { }
 export type Style = CSSProperties | undefined | IStyleArray

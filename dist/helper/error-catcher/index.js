@@ -29,7 +29,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var autobind_decorator_1 = __importDefault(require("autobind-decorator"));
+var autobind_1 = __importDefault(require("../autobind"));
 var message_1 = require("../message");
 var ErrorCatcher = /** @class */ (function () {
     function ErrorCatcher() {
@@ -124,16 +124,16 @@ var ErrorCatcher = /** @class */ (function () {
         };
     };
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], ErrorCatcher.prototype, "addError", null);
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], ErrorCatcher.prototype, "successHandler", null);
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], ErrorCatcher.prototype, "failureHandler", null);
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], ErrorCatcher.prototype, "catch", null);
     return ErrorCatcher;
 }());

@@ -1,5 +1,5 @@
+import autobind from '../autobind'
 import { Listener } from '../listener'
-import autobind from 'autobind-decorator'
 
 export interface IOverlayRender {
   isFixed?: boolean // 是否浮动

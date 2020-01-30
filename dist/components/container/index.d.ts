@@ -1,5 +1,5 @@
 import React from 'react';
-import { CSSProperties, HTMLAttributes } from "react";
+import { CSSProperties, HTMLAttributes } from 'react';
 export interface IStyleArray extends Array<Style> {
 }
 export declare type Style = CSSProperties | undefined | IStyleArray;

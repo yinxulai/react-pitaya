@@ -23,10 +23,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
+var autobind_1 = __importDefault(require("../autobind"));
 var overlay_1 = require("../overlay");
 var listener_1 = require("../listener");
 var container_1 = require("./container");
-var autobind_decorator_1 = __importDefault(require("autobind-decorator"));
 var Controller = /** @class */ (function (_super) {
     __extends(Controller, _super);
     function Controller() {
@@ -82,22 +82,22 @@ var Controller = /** @class */ (function (_super) {
     // 挂载 Overlay
     Controller.isMountOnOverlay = false;
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], Controller.prototype, "open", null);
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], Controller.prototype, "info", null);
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], Controller.prototype, "success", null);
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], Controller.prototype, "warning", null);
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], Controller.prototype, "error", null);
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], Controller.prototype, "delayRemoval", null);
     return Controller;
 }(listener_1.Listener));

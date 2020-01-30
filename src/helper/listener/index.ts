@@ -1,4 +1,4 @@
-import autobind from "autobind-decorator"
+import autobind from '../autobind'
 
 export type Subscriber = () => any
 

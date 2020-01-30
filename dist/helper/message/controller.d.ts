@@ -1,6 +1,6 @@
 import React from 'react';
-import { Listener } from "../listener";
-import { IProps as MessageProps } from "../../components/message";
+import { Listener } from '../listener';
+import { IProps as MessageProps } from '../../components/message';
 export declare class Controller extends Listener {
     static isMountOnOverlay: boolean;
     static mountOnOverlay(): void;

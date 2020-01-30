@@ -47,7 +47,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var style_less_1 = __importDefault(require("./style.less"));
-var autobind_decorator_1 = __importDefault(require("autobind-decorator"));
+var autobind_1 = __importDefault(require("../autobind"));
 var container_1 = __importDefault(require("../../components/container"));
 var controller_1 = __importStar(require("./controller"));
 var Container = /** @class */ (function (_super) {
@@ -103,7 +103,7 @@ var Container = /** @class */ (function (_super) {
         ];
     };
     __decorate([
-        autobind_decorator_1.default
+        autobind_1.default
     ], Container.prototype, "generateCloser", null);
     return Container;
 }(react_1.default.Component));

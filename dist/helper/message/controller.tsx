@@ -1,9 +1,9 @@
 import React from 'react';
-import { insert } from "../overlay"
-import { Listener } from "../listener"
-import { Container } from "./container"
-import autobind from "autobind-decorator"
-import { IProps as MessageProps } from "../../components/message"
+import autobind from '../autobind'
+import { insert } from '../overlay'
+import { Listener } from '../listener'
+import { Container } from './container'
+import { IProps as MessageProps } from '../../components/message'
 
 export class Controller extends Listener {
   // 挂载 Overlay
