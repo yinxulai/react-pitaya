@@ -1,9 +1,9 @@
 import React from 'react'
 import style from './style.less'
-import RootContainer from '../../components/container/index'
+import RootContainer from '../../components/container'
 import defaultController, { Controller } from './controller'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import Message, { IProps as MessageProps } from '../../components/message/index'
+// import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import Message, { IProps as MessageProps } from '../../components/message'
 
 export interface IProps {
   controller?: Controller
@@ -55,15 +55,16 @@ export class Container extends React.Component<IProps, IState> {
   render() {
     return (
       <RootContainer className={[style.container]}>
-        <TransitionGroup className={style.list}>
-          {
-            this.messages.map((message, index) => (
-              <CSSTransition key={String(index)} classNames={this.animationClassNames} timeout={200} >
-                <Message {...message} />
-              </CSSTransition>
-            ))
-          }
-        </TransitionGroup>
+        {/* <TransitionGroup className={style.list}> */}
+        {
+          this.messages.map((message, index) => (
+            <Message {...message} />
+            // <CSSTransition key={String(index)} classNames={this.animationClassNames} timeout={200} >
+            //   <Message {...message} />
+            // </CSSTransition>
+          ))
+        }
+        {/* </TransitionGroup> */}
       </RootContainer>
     )
   }

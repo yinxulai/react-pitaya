@@ -11,11 +11,13 @@ const rootPath = path.resolve(__dirname, '../')
 const compiler = webpack({
     mode: "production",
     entry: path.resolve(rootPath, './src/index.ts'),
+
     output: {
         publicPath: path.resolve(rootPath, "dist"),
         path: path.resolve(rootPath, "dist"),
         filename: "[name].js",
-        libraryTarget: 'umd'
+        libraryTarget: 'umd',
+        library: 'pitaya'
     },
     module: {//用于配置所有第三方模块加载器
         rules: [//第三方模块加载器的规则
@@ -29,21 +31,7 @@ const compiler = webpack({
             //处理字体文件
             { test: /\.(ttf|eot|svg|woff|woff2|otf)$/, use: 'url-loader' }
         ]
-    },
-    externals: [
-        {
-            root: 'React',
-            commonjs2: 'react',
-            commonjs: 'react',
-            amd: 'react'
-        },
-        {
-            root: 'ReactDOM',
-            commonjs2: 'react-dom',
-            commonjs: 'react-dom',
-            amd: 'react-dom'
-        }
-    ]
+    }
 })
 
 compiler.run((err, stats) => err && console.log(err))
