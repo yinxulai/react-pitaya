@@ -57,7 +57,6 @@ function travelCallback(file, from, to, pattern) {
 function travel(dir, callback) {
     dir = path.resolve(dir);
     fs.stat(dir, (err, stats) => {
-        console.log('222', err, stats)
         if (err) return console.error('Error:', err);
         if (!stats.isDirectory()) {
             callback(dir);
