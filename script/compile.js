@@ -2,6 +2,7 @@ const path = require('path')
 const glob = require('glob')
 const rollup = require('rollup')
 const copy = require('./highcopy')
+const { terser } = require('rollup-plugin-terser')
 const commonjs = require('rollup-plugin-commonjs')
 const less = require('@yinxulai/rollup-plugin-less')
 const resolve = require('rollup-plugin-node-resolve')
@@ -31,17 +32,25 @@ async function build() {
   const inputOptions = {
     input: null,
     plugins: [
+      terser(),
       resolve(),
       external(),
       commonjs(),
       typescript(),
-      less({ cssModule: { camelCase: true }, insert: true }),
+      less({
+        insert: true,
+        cssModule: {
+          camelCase: true
+        }
+      })
     ]
   }
 
   const outputOptions = {
     file: null,
-    sourcemap: true
+    format: 'umd',
+    sourcemap: true,
+    exports: 'named'
   }
 
   return Promise.all(entries().map(
@@ -53,6 +62,7 @@ async function build() {
 
       const output = {
         ...outputOptions,
+        name: path.basename(entrie),
         file: (distPath + entrie).replace(/\.\w*$/, '.js')
       }
 
