@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from './style.less'
+import styles from './style.less'
 import Container, { Style, IClassNameArray } from '../container'
 
 export type Name =

@@ -43,7 +43,6 @@ function travelCallback(file, from, to, pattern) {
     if (checkFileExtName(file, pattern)) {
         const tofile = path.join(to, file.slice(from.length))
         copyFileByStream(file, tofile);
-        console.log('[Copy Done]：' + file);
     }
 }
 

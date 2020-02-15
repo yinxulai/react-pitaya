@@ -1,0 +1,25 @@
+// 一个根据 level 生成的海拔阴影
+@factor: 3;
+
+// minx
+.altitude(@level: 1) {
+  .altitude-top(@level);
+  .altitude-transform(@level);
+  .altitude-box-shadow(@level);
+}
+
+// 计算对应的偏离
+.altitude-top(@level: 1) {
+  top: (-@level * 1px);
+}
+
+// 计算对应的缩放
+.altitude-transform(@level: 1) {
+  transform: scale((1 + @level / 100), (1 + @level / 100));
+}
+
+// 计算对应的阴影值
+.altitude-box-shadow(@level: 1) {
+  @color: rgba(0, 0, 0, 0.1 * ((10 - @level / 2) / 3));
+  box-shadow: 0px (@level * @factor * 1px) (@level * @factor * 1px) (-@level * 1px) @color;
+}
