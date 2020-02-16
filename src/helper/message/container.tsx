@@ -2,7 +2,6 @@ import React from 'react'
 import style from './style.less'
 import RootContainer from '../../components/container'
 import defaultController, { Controller } from './controller'
-// import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Message, { IProps as MessageProps } from '../../components/message'
 
 export interface IProps {
@@ -13,18 +12,22 @@ export interface IState {
   messages: MessageProps[]
 }
 
-export class Container extends React.Component<IProps, IState> {
+export default class Container extends React.Component<IProps, IState> {
 
   // 取消订阅
-  cancelListener: () => any
+  cancelListener!: Function
 
   constructor(props: IProps) {
     super(props)
+    // 装载一下
+    this.setState({ messages: this.controller.messageList })
+    // 监听后续变动
     this.cancelListener = this.controller.addListener(() => {
-      this.setState({ messages: this.controller.messages })
+      this.setState({ ...this.state, messages: this.controller.messageList })
     })  // 订阅
   }
 
+  // 取消订阅
   componentWillUnmount() {
     this.cancelListener && this.cancelListener()
   }

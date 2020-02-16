@@ -1,62 +1,47 @@
-import React from 'react';
 import autobind from '../autobind'
-import { insert } from '../overlay'
+import hash from '../../utils/hash';
 import { Listener } from '../listener'
-import { Container } from './container'
 import { IProps as MessageProps } from '../../components/message'
 
+
+// 存储和管理消息
 export class Controller extends Listener {
-  // 挂载 Overlay
-  static isMountOnOverlay: boolean = false
-  static mountOnOverlay() {
-    if (!Controller.isMountOnOverlay) {
-      insert({
-        isFixed: true,
-        isShowMask: false,
-        enableCloseByMask: false,
-        render: (_: any) => <Container />
-      })
-    }
-    Controller.isMountOnOverlay = true
-  }
 
-  lastID = 0
-  messageMap: Map<number, MessageProps> = new Map()
-
-  get messages() {
-    return Array.from(this.messageMap.values())
-  }
+  // 消息列表
+  messageMap: Map<string, MessageProps> = new Map() // Map 结构
+  get messageList() { return Array.from(this.messageMap.values()) } 
 
   @autobind
   open(message: MessageProps, lifeTime = 2000) {
-    Controller.mountOnOverlay()
-    this.messageMap.set(++this.lastID, message)
-    this.delayRemoval(this.lastID, lifeTime)
+    const uniqueID = hash(message)
+    this.messageMap.set(uniqueID, message)
+    this.delayRemoval(uniqueID, lifeTime)
     this.dispatchSubscribers()
   }
 
   @autobind
-  info(context: MessageProps['context']) {
+  info(context: React.ReactNode) {
     this.open({ type: 'info', context }, 2000)
   }
 
   @autobind
-  success(context: MessageProps['context']) {
+  success(context: React.ReactNode) {
     this.open({ type: 'success', context }, 2000)
   }
 
   @autobind
-  warning(context: MessageProps['context']) {
+  warning(context: React.ReactNode) {
     this.open({ type: 'warning', context }, 3000)
   }
 
   @autobind
-  error(context: MessageProps['context']) {
+  error(context: React.ReactNode) {
     this.open({ type: 'error', context }, 4000)
   }
 
+  //延时删除
   @autobind
-  delayRemoval(id: number, lifeTime: number) {
+  delayRemoval(id: string, lifeTime: number) {
     setTimeout(() => {
       this.messageMap.delete(id)
       this.dispatchSubscribers()

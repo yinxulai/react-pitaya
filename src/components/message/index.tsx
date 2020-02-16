@@ -8,6 +8,7 @@ export type Type = 'info' | 'error' | 'success' | 'warning'
 
 export interface IProps extends BaseProps {
   type?: Type
+  error?: string
   context?: React.ReactNode
 }
 
