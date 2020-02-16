@@ -42,3 +42,27 @@
 .warning {
     color: @warning;
 }
+
+.stackSwitch {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .switchButton {
+    width: 100%;
+    opacity: .3;
+    color: black;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .stack {
+    color: @error;
+    overflow: auto;
+    .gap-padding(1);
+    text-align: left;
+    border-radius: 4px;
+    background-color: @gray-premultiply-level-10;
+  }
+}

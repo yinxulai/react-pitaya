@@ -1,6 +1,6 @@
 const I64BIT_TABLE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-'.split('');
 
-export default function hash(source: any): string {
+export default function hash(...source: any[]): string {
   let source_string = ''
 
   if (typeof source === 'object') {

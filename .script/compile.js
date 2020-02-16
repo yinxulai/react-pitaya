@@ -54,7 +54,8 @@ async function build() {
     sourcemap: true,
     exports: 'named',
     globals: {
-      react: 'React'
+      'react': 'React',
+      'react-dom': 'ReactDOM'
     }
   }
 

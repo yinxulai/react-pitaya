@@ -1,2 +1,3 @@
-export { default as errorCatcher } from './error-catcher';
+declare const _default: {};
+export default _default;
 //# sourceMappingURL=index.d.ts.map

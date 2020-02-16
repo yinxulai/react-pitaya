@@ -1,15 +1,16 @@
 import React from 'react'
 import style from './style.less'
+import Message from '../../components/message'
 import RootContainer from '../../components/container'
-import defaultController, { Controller } from './controller'
-import Message, { IProps as MessageProps } from '../../components/message'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import defaultController, { Controller, ToaserMessageOptions } from './controller'
 
 export interface IProps {
   controller?: Controller
 }
 
 export interface IState {
-  messages: MessageProps[]
+  toasers: ToaserMessageOptions[]
 }
 
 export default class Container extends React.Component<IProps, IState> {
@@ -17,13 +18,12 @@ export default class Container extends React.Component<IProps, IState> {
   // 取消订阅
   cancelListener!: Function
 
-  constructor(props: IProps) {
-    super(props)
+  componentDidMount() {
     // 装载一下
-    this.setState({ messages: this.controller.messageList })
+    this.setState({ toasers: this.controller.toaserList })
     // 监听后续变动
     this.cancelListener = this.controller.addListener(() => {
-      this.setState({ ...this.state, messages: this.controller.messageList })
+      this.setState({ ...this.state, toasers: this.controller.toaserList })
     })  // 订阅
   }
 
@@ -32,13 +32,18 @@ export default class Container extends React.Component<IProps, IState> {
     this.cancelListener && this.cancelListener()
   }
 
+  // 延迟当前消息销毁
+  continuedLife() {
+
+  }
+
   get controller() {
     return this.props.controller || defaultController
   }
 
-  get messages() {
-    const { messages } = this.state || {}
-    return messages || []
+  get toasers() {
+    const { toasers } = this.state || {}
+    return toasers || []
   }
 
   get animationClassNames() {
@@ -58,16 +63,17 @@ export default class Container extends React.Component<IProps, IState> {
   render() {
     return (
       <RootContainer className={[style.container]}>
-        {/* <TransitionGroup className={style.list}> */}
-        {
-          this.messages.map((message, index) => (
-            <Message {...message} />
-            // <CSSTransition key={String(index)} classNames={this.animationClassNames} timeout={200} >
-            //   <Message {...message} />
-            // </CSSTransition>
-          ))
-        }
-        {/* </TransitionGroup> */}
+        <TransitionGroup className={style.list}>
+          {
+            this.toasers.map((message, index) => (
+              <CSSTransition key={String(index)} classNames={this.animationClassNames} timeout={200} >
+                <RootContainer onMouseMove={message.delayRemoval}>
+                  <Message {...message} />
+                </RootContainer>
+              </CSSTransition>
+            ))
+          }
+        </TransitionGroup>
       </RootContainer>
     )
   }
