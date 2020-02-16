@@ -20,7 +20,7 @@ function entries() {
   const entryFiles = glob.sync(srcPath + '/**/*.{ts,tsx}')
   for (let index = 0; index < entryFiles.length; index++) {
     const filePath = entryFiles[index];
-    if (filePath.includes('stories')) { return }
+    if (filePath.includes('stories.ts')) { continue }
     const filename = filePath.substring(srcPath.length);
 
     fileList.push(filename)
@@ -83,4 +83,4 @@ build()
       path.resolve(rootPath, './lib/styles'), // to
       ['less'] // 格式
     )
-  }).catch(err => console.error(err));
+  });
