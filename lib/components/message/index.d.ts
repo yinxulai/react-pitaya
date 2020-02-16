@@ -5,7 +5,7 @@ export declare function isMessageProps(data: any): data is IProps;
 export interface IProps extends BaseProps {
     type: Type;
     context: React.ReactNode;
-    statusCode?: string;
+    statusCode?: string | number;
     error?: string;
     stack?: string;
 }

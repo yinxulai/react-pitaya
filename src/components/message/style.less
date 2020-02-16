@@ -46,6 +46,7 @@
 .stackSwitch {
   width: 100%;
   display: flex;
+  max-height: 200px;
   flex-direction: column;
 
   .switchButton {
@@ -54,13 +55,13 @@
     color: black;
     font-size: 10px;
     cursor: pointer;
+    user-select: none;
     text-align: center;
   }
 
   .stack {
     color: @error;
     overflow: auto;
-    .gap-padding(1);
     text-align: left;
     border-radius: 4px;
     background-color: @gray-premultiply-level-10;
