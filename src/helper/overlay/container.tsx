@@ -2,8 +2,7 @@ import React from 'react'
 import style from './style.less'
 import autobind from '../autobind'
 import BaseContainer from '../../components/container'
-import defaultController, { Controller, OverlayID, isOverlayObject, OverlayMap }
-  from './controller'
+import defaultController, { Controller, OverlayID, isOverlayObject, OverlayMap } from './controller'
 
 export interface IProps {
   controller?: Controller
@@ -27,7 +26,7 @@ export default class Container extends React.Component<IProps, IState> {
   componentWillUnmount() {
     this.cancelListener && this.cancelListener()
   }
-  
+
   @autobind
   generateCloser(key: OverlayID) {
     return (_: any) => this.controller.remove(key)

@@ -2,7 +2,7 @@ const path = require('path')
 const glob = require('glob')
 const rollup = require('rollup')
 const copy = require('./highcopy')
-const { terser } = require('rollup-plugin-terser')
+// const { terser } = require('rollup-plugin-terser')
 const commonjs = require('rollup-plugin-commonjs')
 const less = require('@yinxulai/rollup-plugin-less')
 const resolve = require('rollup-plugin-node-resolve')
@@ -34,7 +34,7 @@ async function build() {
   const inputOptions = {
     input: null,
     plugins: [
-      terser(),
+      // terser(), // 压缩代码插件、十分不利于调试
       resolve(),
       external(),
       commonjs(),
