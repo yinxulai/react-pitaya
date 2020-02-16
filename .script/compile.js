@@ -52,7 +52,10 @@ async function build() {
     file: null,
     format: 'umd',
     sourcemap: true,
-    exports: 'named'
+    exports: 'named',
+    globals: {
+      react: 'React'
+    }
   }
 
   return Promise.all(entries().map(

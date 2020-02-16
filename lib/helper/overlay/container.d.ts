@@ -7,12 +7,12 @@ export interface IState {
     overlays: OverlayMap;
 }
 export default class Container extends React.Component<IProps, IState> {
-    constructor(props: IProps);
-    cancelListener: () => any;
-    generateCloser(key: OverlayID): (_: any) => void;
+    cancelListener: Function;
+    componentDidMount(): void;
     componentWillUnmount(): void;
+    generateCloser(key: OverlayID): (_: any) => void;
     get controller(): Controller;
-    get overlayEntities(): (JSX.Element | null)[] | undefined;
-    render(): ({} | null | undefined)[];
+    get overlayEntities(): (JSX.Element | null)[];
+    render(): JSX.Element;
 }
 //# sourceMappingURL=container.d.ts.map

@@ -7,8 +7,8 @@ export interface IProps {
 export interface IState {
     messages: MessageProps[];
 }
-export declare class Container extends React.Component<IProps, IState> {
-    cancelListener: () => any;
+export default class Container extends React.Component<IProps, IState> {
+    cancelListener: Function;
     constructor(props: IProps);
     componentWillUnmount(): void;
     get controller(): Controller;
