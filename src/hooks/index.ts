@@ -1,1 +1,1 @@
-export { default as usePlatform } from './platform'
+export { usePlatform } from './platform'

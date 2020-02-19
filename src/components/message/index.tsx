@@ -1,9 +1,8 @@
 import React from 'react'
 import Title from '../title'
-import getStack from '../../utils/stack'
+import { stack as getStack } from '../../utils'
 import Container, { IProps as BaseProps } from '../container'
 import style from './style.less'
-
 
 export type Type = 'info' | 'error' | 'success' | 'warning'
 

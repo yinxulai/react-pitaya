@@ -1,8 +1,8 @@
 import autobind from '../autobind'
-import hash from '../../utils/hash';
 import { Listener } from '../listener'
+import { stack, hash } from '../../utils';
 import { IProps as MessageProps, Type } from '../../components/message'
-import stack from '../../utils/stack';
+
 
 export interface ToaserMessageOptions extends MessageProps {
   delayRemoval: () => void

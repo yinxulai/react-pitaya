@@ -1,3 +1,3 @@
-export { insert, remove } from './controller'
-export { default as default } from './container'
-
+import Overlay from './container'
+import { insert, remove } from './controller'
+export { Overlay, insert, remove }

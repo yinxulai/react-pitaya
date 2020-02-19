@@ -1,6 +1,7 @@
+import { hash } from '../../utils'
 import autobind from '../autobind'
-import hash from '../../utils/hash'
 import { Listener } from '../listener'
+
 export interface OverlayObject {
   isFixed?: boolean // 是否浮动
   isShowMask?: boolean // 是否显示遮罩

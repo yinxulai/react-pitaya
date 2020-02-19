@@ -15,18 +15,29 @@ const srcPath = path.resolve(rootPath, './src')
 const distPath = path.resolve(rootPath, './lib')
 
 function entries() {
+  return [
+    "/index.ts",
+    "/helper/autobind/index.ts",
+    "/helper/listener/index.ts",
+    "/helper/overlay/index.ts",
+    "/helper/toaster/index.ts",
+    "/hooks/index.ts"
+  ]
+
+
+
   //执行同步全局搜索，返回{array<string>}文件名数组对象
-  const fileList = new Array()
-  const entryFiles = glob.sync(srcPath + '/**/*.{ts,tsx}')
-  for (let index = 0; index < entryFiles.length; index++) {
-    const filePath = entryFiles[index];
-    if (filePath.includes('stories.ts')) { continue }
-    const filename = filePath.substring(srcPath.length);
+  // const fileList = new Array()
+  // const entryFiles = glob.sync(srcPath + '/**/*.{ts,tsx}')
+  // for (let index = 0; index < entryFiles.length; index++) {
+  //   const filePath = entryFiles[index];
+  //   if (filePath.includes('stories.ts')) { continue }
+  //   const filename = filePath.substring(srcPath.length);
 
-    fileList.push(filename)
-  }
+  //   fileList.push(filename)
+  // }
 
-  return fileList
+  // return fileList
 }
 
 async function build() {
@@ -83,8 +94,8 @@ async function build() {
 build()
   .then(() => {
     copy(
-      path.resolve(rootPath, './src/styles'), // form
-      path.resolve(rootPath, './lib/styles'), // to
-      ['less'] // 格式
+      path.resolve(rootPath, './src'), // form
+      path.resolve(rootPath, './lib'), // to
+      ['less', 'd.ts'] // 格式
     )
   });

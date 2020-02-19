@@ -1,5 +1,5 @@
 import React from 'react';
-import Overlay from './';
+import { Overlay } from './index';
 import { Controller } from './controller';
 import Button from '../../components/button';
 import Gap from '../../components/gap';

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function usePlatform() {
+export function usePlatform() {
 
     const [size, setSize] = React.useState({
         isMobile: false, // 移动设备
