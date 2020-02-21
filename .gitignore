@@ -2,3 +2,4 @@ node_modules
 dist/*
 lib/*
 .ts-build-cache
+yarn-error.log

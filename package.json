@@ -7,20 +7,24 @@
   "main": "lib/index.js",
   "scripts": {
     "storybook": "start-storybook",
+    "build:babel": "babel src --out-dir lib --extensions '.ts,.tsx'",
     "build": "tsc && node .script/compile.js"
   },
   "files": [
     "lib"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
-    "@rollup/plugin-typescript": "^3.0.0",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
     "@storybook/react": "^5.3.13",
     "@types/react": "^16.9.19",
     "@types/react-transition-group": "^4.2.3",
-    "@yinxulai/rollup-plugin-less": "^0.0.7",
+    "@yinxulai/babel-plugin-less": "^0.0.1",
     "autobind-decorator": "^2.4.0",
-    "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
     "glob": "^7.1.6",
     "less": "^3.11.1",
@@ -28,12 +32,6 @@
     "progress-bar-webpack-plugin": "^2.1.0",
     "react-docgen-typescript-loader": "^3.6.0",
     "react-transition-group": "^4.3.0",
-    "rollup": "^1.31.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.2",
-    "rollup-plugin-terser": "^5.2.0",
-    "rollup-plugin-typescript": "^1.0.1",
     "style-loader": "^1.1.3",
     "ts-loader": "^6.2.1",
     "tslib": "^1.10.0",
@@ -43,5 +41,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3"
+  }
 }
