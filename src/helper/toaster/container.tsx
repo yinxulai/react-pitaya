@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './style.less'
 import Message from '../../components/message'
-import RootContainer from '../../components/container'
+import BaseContainer from '../../components/container'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import defaultController, { Controller, ToaserMessageOptions } from './controller'
 
@@ -62,19 +62,19 @@ export default class Container extends React.Component<IProps, IState> {
 
   render() {
     return (
-      <RootContainer className={[style.container]}>
+      <BaseContainer className={[style.container]}>
         <TransitionGroup className={style.list}>
           {
             this.toasers.map((message, index) => (
               <CSSTransition key={String(index)} classNames={this.animationClassNames} timeout={200} >
-                <RootContainer onMouseMove={message.delayRemoval}>
+                <BaseContainer className={[style.item]} onMouseMove={message.delayRemoval}>
                   <Message {...message} />
-                </RootContainer>
+                </BaseContainer>
               </CSSTransition>
             ))
           }
         </TransitionGroup>
-      </RootContainer>
+      </BaseContainer>
     )
   }
 }
