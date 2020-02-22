@@ -64,9 +64,8 @@ export default class Container extends React.Component<IProps, IState> {
   }
 
   render() {
-    const sortID = Date.now()
     return (
-      <BaseContainer className={[style.overlay]} style={{ zIndex: sortID }}>
+      <BaseContainer className={[style.overlay]}>
         {this.overlayEntities}
       </BaseContainer>
     )
