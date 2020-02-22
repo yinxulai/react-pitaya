@@ -1,5 +1,4 @@
 import React from 'react'
-// import Icon from '../icon'
 import styles from './style.less'
 import Container, { Style, IClassNameArray } from '../container'
 
@@ -9,7 +8,6 @@ export type ChangeHanler<T> = (value: T) => void
 export type Validator = (value: string) => ValidateResult | Promise<ValidateResult>
 type HTMLInputAttributes = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className' | 'style' | 'prefix' | 'size'>
 export type InputTip = { type?: 'warning' | 'error' | 'correct' | 'normal', message?: string | React.ReactElement }
-
 
 export interface IProps extends HTMLInputAttributes {
   size?: Size
@@ -40,14 +38,14 @@ const Tip: React.FC<InputTip> = props => {
 export const Input: React.FC<IProps> = props => {
   const { size = 'default', tip,
     width = 200, prefix, suffix, style,
-    className, value = '', ...attributes } = props
+    className, defaultValue = '', ...attributes } = props
 
   const widthStyle = { width: `${width}px` }
 
   return (
     <Container className={[styles.input, styles[size], className]} style={[widthStyle, style]}>
       {prefix && prefix}
-      <input className={styles.realInput} value={value} {...attributes} />
+      <input className={styles.realInput} {...attributes} />
       {tip && <Tip {...tip} />}
       {suffix && suffix}
     </Container>

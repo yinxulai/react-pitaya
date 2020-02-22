@@ -15,6 +15,7 @@ export default class Container extends React.Component<IProps, IState> {
 
   // 取消订阅
   cancelListener!: Function
+  overlaySortIndex: number = 1
 
   componentDidMount() {
     this.setState({ overlays: this.controller.overlayMap })
@@ -48,8 +49,8 @@ export default class Container extends React.Component<IProps, IState> {
         return null // 非有效的 Overlay
       }
 
-      const sortID = Date.now()
       const isShowMask = overlay.isShowMask // 是否显示遮罩
+      const sortID = this.overlaySortIndex++ // 必须保证服务端客户端相同
       const enableCloseByMask = overlay.enableCloseByMask // 是否允许点击遮罩关闭
       const maskCloser = enableCloseByMask ? this.generateCloser(id) : undefined
 

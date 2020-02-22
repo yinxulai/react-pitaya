@@ -78,6 +78,5 @@ export class Controller extends Listener {
 }
 
 const controller = new Controller()
-const { info, error, success, warning } = controller
-export { info, error, success, warning }
+export const { info, error, success, warning } = controller
 export default controller
