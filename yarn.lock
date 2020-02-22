@@ -1679,10 +1679,10 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"@yinxulai/babel-plugin-less@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@yinxulai/babel-plugin-less/-/babel-plugin-less-0.0.2.tgz#be96bb5eb123e42233308dbb9666876e881e3964"
-  integrity sha512-oSs/OOyPEvhDSm97Sz/rY+sSxOQBH/HIh8U7eDlubTBWPeZRJt9tf6CbuOjpV1zxA5GND45uNrZybau6SW2xXw==
+"@yinxulai/babel-plugin-less@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@yinxulai/babel-plugin-less/-/babel-plugin-less-0.0.3.tgz#354a4055426cdf31c1777130c3048b1216018723"
+  integrity sha512-yxHE8HoeJXkGOQ8yHNsVxUca+NndifUZGwd5uXaVXE/QGAyRUvqcHln+vSTAFVNCBdF7xDAdKkMcnH8AD+6sxQ==
   dependencies:
     "@babel/core" "^7.8.4"
     "@babel/template" "^7.8.3"
