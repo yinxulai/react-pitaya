@@ -5,6 +5,7 @@ import { IProps as MessageProps, Type } from '../../components/message'
 
 
 export interface ToaserMessageOptions extends MessageProps {
+  id: string // 
   delayRemoval: () => void
 }
 
@@ -27,13 +28,13 @@ export class Controller extends Listener {
   @autobind
   open(type: Type = 'info', options: MessageProps | React.ReactNode, lifeTime = 2000) {
     // 加入堆栈确保确实是唯一性
-    const uniqueID = hash(options, stack(2, 4))
+    const uniqueID = hash(options, stack(2, 6))
     const delayRemoval = () => this.delayRemoval(uniqueID, lifeTime)
 
     if (isMessageProps(options)) {
-      this.toaserMap.set(uniqueID, { ...options, delayRemoval, type })
+      this.toaserMap.set(uniqueID, { ...options, delayRemoval, id: uniqueID, type })
     } else {
-      this.toaserMap.set(uniqueID, { context: options, delayRemoval, type })
+      this.toaserMap.set(uniqueID, { context: options, delayRemoval, id: uniqueID, type })
     }
 
     this.delayRemoval(uniqueID, lifeTime)
@@ -72,6 +73,7 @@ export class Controller extends Listener {
       this.toaserMap.delete(id)
       this.dispatchSubscribers()
     }, lifeTime)
+
     // 更新 clearID
     this.removalMap.set(id, clearID)
   }

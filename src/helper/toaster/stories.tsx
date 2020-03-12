@@ -31,7 +31,7 @@ export const Test = () => {
       <Button type="normal" size="small" onClick={() => controller.error({ statusCode: 200, error: 'error_info', })}>
         statusCode-error
       </Button>
-      <Container controller={controller} />
+      <Container controller={controller} stack={3}/>
     </Gap >
   )
 };

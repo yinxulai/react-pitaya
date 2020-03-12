@@ -46,9 +46,6 @@ const Stack: React.FC<{ stack?: string }> = props => {
 
 export const Message: React.FC<React.PropsWithChildren<IProps>> = props => {
   let { type, context, statusCode, error, stack } = props
-  // 如果 type 是 error 自动获取当前的 call stack
-  type === 'error' && (stack = stack || getStack(4, 20))
-
   // const titleString = statusCode ? `${statusCode}: ${type}` : type
 
   return (
