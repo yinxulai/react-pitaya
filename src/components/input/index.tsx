@@ -67,7 +67,7 @@ export const Textarea: React.FC<TextareaProps> = props => {
   return (
     <Container className={[styles.input, styles[size], className]} style={[widthStyle, style]}>
       {prefix && prefix}
-      <textarea className={styles.realInput} {...attributes} />
+      <textarea style={{ resize: 'none' }} className={styles.realInput} {...attributes} />
       {tip && <Tip {...tip} />}
       {suffix && suffix}
     </Container>
