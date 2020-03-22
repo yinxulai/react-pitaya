@@ -7,9 +7,11 @@ export type Size = 'large' | 'small' | 'normal'
 export type ChangeHanler<T> = (value: T) => void
 export type Validator = (value: string) => ValidateResult | Promise<ValidateResult>
 type HTMLInputAttributes = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className' | 'style' | 'prefix' | 'size'>
+type HTMLTextareaAttributes = Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'className' | 'style' | 'prefix' | 'size'>
+
 export type InputTip = { type?: 'warning' | 'error' | 'correct' | 'normal', message?: string | React.ReactElement }
 
-export interface IProps extends HTMLInputAttributes {
+export interface IBaseProps {
   size?: Size
   tip?: InputTip,
   width?: number
@@ -18,6 +20,9 @@ export interface IProps extends HTMLInputAttributes {
   style?: Style
   className?: IClassNameArray
 }
+
+export type InputProps = IBaseProps & HTMLInputAttributes
+export type TextareaProps = IBaseProps & HTMLTextareaAttributes
 
 const Tip: React.FC<InputTip> = props => {
   const { type = 'normal', message } = props
@@ -35,10 +40,10 @@ const Tip: React.FC<InputTip> = props => {
   )
 }
 
-export const Input: React.FC<IProps> = props => {
+export const Input: React.FC<InputProps> = props => {
   const { size = 'default', tip,
-    width = 200, prefix, suffix, style,
-    className, defaultValue = '', ...attributes } = props
+    width = 200, prefix, suffix,
+    style, className, ...attributes } = props
 
   const widthStyle = { width: `${width}px` }
 
@@ -52,7 +57,21 @@ export const Input: React.FC<IProps> = props => {
   )
 }
 
+export const Textarea: React.FC<TextareaProps> = props => {
+  const { size = 'default', tip,
+    width = 200, prefix, suffix,
+    style, className, ...attributes } = props
+
+  const widthStyle = { width: `${width}px` }
+
+  return (
+    <Container className={[styles.input, styles[size], className]} style={[widthStyle, style]}>
+      {prefix && prefix}
+      <textarea className={styles.realInput} {...attributes} />
+      {tip && <Tip {...tip} />}
+      {suffix && suffix}
+    </Container>
+  )
+}
 
 export default Input
-
-export const a = <Input />
