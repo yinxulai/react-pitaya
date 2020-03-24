@@ -46,10 +46,10 @@ export const Loading = () => {
     <Gap all={3}>
       <Button type="normal" onClick={resolve}>
         Normal Button
-</Button>
+      </Button>
       <Button type="link" onClick={resolve}>
         Link Button
-</Button>
+      </Button>
     </Gap>
   )
 }
