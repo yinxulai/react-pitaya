@@ -32,7 +32,6 @@ function getClientRect<T extends HTMLElement>(ref: React.RefObject<T>) {
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = props => {
-  const controlPointRadius = 8
   const { value, onChange } = props
   const elRef = React.useRef<HTMLSpanElement>(null)
 
@@ -46,27 +45,22 @@ const ProgressBar: React.FC<ProgressBarProps> = props => {
       return
     }
 
-    const rateValue = ((e.clientX - progressLineClientRect.x) / progressLineClientRect.width)
-
-    if (rateValue < 0) {
-      return onChange(0)
-    }
-
-    if (rateValue > 1) {
-      return onChange(1)
-    }
+    const rateValue = (e.pageX - progressLineClientRect.x) / progressLineClientRect.width
 
     return onChange(rateValue)
   }
 
-  const controlPointLeftStyle = (value: number) => {
-    const progressLineClientRect = getClientRect(elRef)
-    const styleObj = { left: 0 - controlPointRadius + 'px' }
-    if (!progressLineClientRect) {
-      return styleObj
+  const controlPointLeftStyle = (value: number = 0) => {
+    let safeValue = value
+    
+    if (safeValue < 0){
+      safeValue = 0
+    }
+    if (safeValue >1) {
+      safeValue = 1
     }
 
-    return { left: progressLineClientRect.width * value - controlPointRadius + 'px' }
+    return { left: safeValue * 100 + '%' }
   }
 
   return (
@@ -149,13 +143,15 @@ export function StepPlayer<T>(props: IProps<T>) {
   const progressBarValue = stepIndex / (steps.length - 1)
 
   const handleProgressBarChange = (value: number) => {
-    setStepIndex(Math.floor(value * steps.length))
+    // -1 是因为坐标从 0 开始 1*10 = 10，坐标为 9
+    const lastStepIndex = Math.round(value * steps.length) - 1
+    setStepIndex(lastStepIndex)
   }
 
   React.useEffect(() => {
     const timer = setInterval(() => {
       if (playState === 'playing') {
-        if (stepIndex < steps.length - 1) {
+        if (stepIndex < (steps.length -1)) {
           setStepIndex(stepIndex + 1)
         } else {
           if (autoloop) { // 播放到头了

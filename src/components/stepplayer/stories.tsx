@@ -6,8 +6,8 @@ export default {
 };
 
 const stepRender = (v: any) => <>{v}</>
-const stepData = Array(100).fill(1).map((_, i) => i)
-const baseStyle = { width: '200px', height: '200px' }
+const stepData = Array(10).fill(null).map((_, i) => i)
+const baseStyle = { width: '400px'}
 
 export const Base = () => (
   <div style={baseStyle}>
