@@ -1,3 +1,4 @@
+export { default as StepPlayer } from './components/stepplayer'
 export { default as Container } from './components/container'
 export { default as Message } from './components/message'
 export { default as Button } from './components/button'

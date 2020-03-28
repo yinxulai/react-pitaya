@@ -1,0 +1,77 @@
+@import '../../styles/altitude.less';
+@import '../../styles/color.less';
+@import '../../styles/gap.less';
+
+.stepPlayer {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+
+  padding: 8px;
+
+  border-radius: 8px;
+  background-color: @color-primary;
+
+  .altitude-box-shadow(6);
+
+  .screen {
+    flex: 1;
+    width: 100%;
+    min-height: 200px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    background-color: white;
+  }
+
+  .progressBar {
+    width: 100%;
+
+    padding: 10px 10px;
+    border-radius: 40px;
+
+    position: relative;
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, .2);
+  
+    .controlPoint {
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      border-radius: 20px;
+      background-color: white;
+      border: 2px solid transparent;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, .5);
+
+      z-index: 1;
+      transition: .1s;
+    }
+
+    .controlPoint:hover {
+      // border: 2px solid @color-primary;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, .5);
+    }
+  
+    .progressLine {
+      flex: 1;
+      height: 3px;
+      border-radius: 4px;
+      background-color: white;
+
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+
+      position: relative;
+    }
+  }
+  
+}
+
+
+

@@ -1,6 +1,5 @@
 import React from 'react'
 import Title from '../title'
-import { stack as getStack } from '../../utils'
 import Container, { IProps as BaseProps } from '../container'
 import style from './style.less'
 
