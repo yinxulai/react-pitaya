@@ -50,3 +50,15 @@ export const PlaySpeed = () => (
     />
   </div>
 );
+
+export const PlaySpeed2 = () => (
+  <div style={baseStyle}>
+    <StepPlayer
+      autoloop={true}
+      autoplay={true}
+      steps={[1, 2, 3]}
+      playSpeed={1000}
+      stepRender={stepRender}
+    />
+  </div>
+);
