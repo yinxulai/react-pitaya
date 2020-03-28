@@ -18,8 +18,8 @@ export const BaseInput = () => (
 
 export const BaseTextarea = () => (
   <Gap all={3}>
-    <Textarea cols={3} size="small" placeholder="测试" tip={{ type: 'warning', message: '请检查输入' }} />
-    <Textarea cols={3} size="normal" placeholder="测试" tip={{ type: 'warning', message: '请检查输入' }} />
+    <Textarea cols={3} size="small" placeholder="测试"  />
+    <Textarea cols={3} size="normal" placeholder="测试"  />
     <Textarea cols={3} size="large" placeholder="测试" tip={{ type: 'warning', message: '请检查输入' }} />
     <Textarea cols={3} size="large" placeholder="测试" tip={{ type: 'warning', message: '请检查输入' }} />
   </Gap>
