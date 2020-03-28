@@ -97,7 +97,7 @@ const PlayStateSwitchButton: React.FC<PlayStateSwitchButtonProps> = (props) => {
 
   const suspend = (
     <svg viewBox="0 0 62 82" version="1.1">
-      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g transform="translate(-19.000000, -9.000000)" fill="#FFFFFF">
           <g id="suspend" transform="translate(19.000000, 9.000000)">
             <rect id="rect-l" x="5.68434189e-14" y="0" width="19" height="82" rx="9.5"></rect>
@@ -110,7 +110,7 @@ const PlayStateSwitchButton: React.FC<PlayStateSwitchButtonProps> = (props) => {
 
   const playing = (
     <svg viewBox="0 0 62 84" version="1.1" >
-      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g transform="translate(-19.000000, -8.000000)" fill="#FFFFFF">
           <g id="playing" transform="translate(19.000000, 8.000000)">
             <path d="M57.9741594,49.9717764 L16.5374483,81.3539914 C12.1347578,84.688382 5.86261425,83.8223538 2.52822364,79.4196633 C1.21221217,77.6820171 0.5,75.5619628 0.5,73.382215 L0.5,10.617785 C0.5,5.09493748 4.9771525,0.61778498 10.5,0.61778498 C12.6797478,0.61778498 14.7998021,1.32999715 16.5374483,2.64600862 L57.9741594,34.0282236 C62.3768499,37.3626142 63.2428781,43.6347578 59.9084875,48.0374483 C59.3553629,48.7677874 58.7044985,49.4186518 57.9741594,49.9717764 Z" id="triangle"></path>
