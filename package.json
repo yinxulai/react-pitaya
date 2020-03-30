@@ -1,6 +1,6 @@
 {
   "name": "react-pitaya",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "",
   "author": "yinxulai@hotmail.com",
   "license": "ISC",
@@ -25,9 +25,12 @@
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
     "@storybook/react": "^5.3.13",
+    "@types/highlight.js": "^9.12.3",
+    "@types/marked": "^0.7.3",
     "@types/react": "^16.9.19",
     "@types/react-transition-group": "^4.2.3",
-    "@yinxulai/babel-plugin-less": "^0.0.3",
+    "@yinxulai/babel-plugin-less": "^0.0.4",
+    "autobind-decorator": "^2.4.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
     "less": "^3.11.1",
@@ -39,17 +42,18 @@
     "style-loader": "^1.1.3",
     "ts-loader": "^6.2.1",
     "tslib": "^1.10.0",
-    "typescript": "^3.7.5",
-    "autobind-decorator": "^2.4.0"
+    "typescript": "^3.7.5"
   },
   "peerDependencies": {
+    "autobind-decorator": "^2.4.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "autobind-decorator": "^2.4.0",
     "react-transition-group": "^4.3.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.8.4",
-    "core-js": "3"
+    "core-js": "3",
+    "highlight.js": "^9.18.1",
+    "marked": "^0.8.2"
   }
 }
