@@ -7,19 +7,59 @@
 
   .context {
     font-size: 14px;
+    line-height: 1.5em;
+    letter-spacing: 0.05em;
     color: rgba(0, 0, 0, .8);
+
+    * {
+      transition: .1s;
+    }
 
     :global {
       blockquote {
-        padding: 10px 15px;
+        padding: 0px;
         margin-block-end: 0;
         margin-inline-end: 0;
         margin-block-start: 0;
         margin-inline-start: 0;
-        border-left-width: 10px;
-        border-color: #D6DBDF;
-        border-left-style: solid;
-        background: none repeat scroll 0 0 rgba(102, 128, 153, .05);
+      }
+
+      blockquote:before {
+        color: @gray-level-5;
+        position: absolute;
+        content: open-quote;
+        font-size: 4em;
+        margin-left: 0em;
+        vertical-align: 0.4em;
+      }
+
+      blockquote>p {
+        word-break: break-all;
+        margin-inline-end: 0em;
+        margin-inline-start: 0em;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        font-style: italic;
+        padding: 1em;
+        color: @gray-level-5;
+      }
+
+      p {
+        text-indent: 2em;
+      }
+
+      p:hover {
+        border-radius: 2px;
+        background-color: @gray-level-10;
+      }
+
+      li {
+        margin: 0.3em;
+      }
+
+      li:hover {
+        border-radius: 2px;
+        background-color: @gray-level-10;
       }
 
       pre {
@@ -29,8 +69,12 @@
         border-radius: 4px;
         background-color: #232632;
         color: rgba(255, 255, 255, .8);
-
+        .altitude-box-shadow(2);
         .gap-padding-all(2);
+      }
+
+      pre:hover {
+        .altitude-box-shadow(4);
       }
 
       .hljs-keyword,
