@@ -33,13 +33,13 @@ export const MarkDown: React.FC<IProps> = props => {
 
   return (
     <Container className={[style.markdown, props.className]} style={props.style}>
-      <blockquote
+      <section
         className={style.context}
         dangerouslySetInnerHTML={{
           __html: marked(source)
         }}
       >
-      </blockquote>
+      </section>
     </Container>
   )
 }
