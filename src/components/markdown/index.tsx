@@ -20,19 +20,21 @@ marked.setOptions({
 });
 
 export interface IProps extends BaseProps {
+  width?: string
   source?: string
   children?: string
 }
 
 export const MarkDown: React.FC<IProps> = props => {
   let source = props.source || props.children
+  const width = props.width ? { width: props.width } : {}
 
   if (!source) {
     return null
   }
 
   return (
-    <Container className={[style.markdown, props.className]} style={props.style}>
+    <Container className={[style.markdown, props.className]} style={[width, props.style]}>
       <section
         className={style.context}
         dangerouslySetInnerHTML={{

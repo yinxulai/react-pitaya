@@ -91,6 +91,6 @@ export const Base = () => (
     <MarkDown>{docpart6}</MarkDown>
     <MarkDown>{docpart7}</MarkDown>
     <MarkDown>{docpart8}</MarkDown>
-    <MarkDown>{docpart9}</MarkDown>
+    <MarkDown width="10px">{docpart9}</MarkDown>
   </div>
 );
