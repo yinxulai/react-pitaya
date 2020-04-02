@@ -1,6 +1,6 @@
 {
   "name": "react-pitaya",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "",
   "author": "yinxulai@hotmail.com",
   "license": "ISC",
@@ -26,6 +26,7 @@
     "@babel/preset-typescript": "^7.8.3",
     "@storybook/react": "^5.3.13",
     "@types/highlight.js": "^9.12.3",
+    "@types/lodash": "^4.14.149",
     "@types/marked": "^0.7.3",
     "@types/react": "^16.9.19",
     "@types/react-transition-group": "^4.2.3",
@@ -46,10 +47,12 @@
   },
   "peerDependencies": {
     "autobind-decorator": "^2.4.0",
+    "lodash": "^4.17.15",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-transition-group": "^4.3.0"
   },
+
   "dependencies": {
     "@babel/runtime": "^7.8.4",
     "core-js": "3",
