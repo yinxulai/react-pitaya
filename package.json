@@ -56,7 +56,7 @@
   "dependencies": {
     "@babel/runtime": "^7.8.4",
     "core-js": "3",
-    "highlight.js": "^9.18.1",
+    "highlight.js": "^10.1.2",
     "marked": "^0.8.2"
   }
 }
